@@ -1,0 +1,6 @@
+name: test-duncanspage
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: main-stack
