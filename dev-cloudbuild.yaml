@@ -1,13 +1,12 @@
 steps:
-- id: 'network deploy'
-  name: 'hashicorp/terraform:1.0.0'
-  entrypoint: sh
-  args: ["-c", "terraform -chdir=deployments/networking/dev apply -auto-approve"]
 - id: 'network init'
   name: 'hashicorp/terraform:1.0.0'
   entrypoint: sh
   args: ["-c", "terraform -chdir=deployments/networking/dev init "]
-
+- id: 'network deploy'
+  name: 'hashicorp/terraform:1.0.0'
+  entrypoint: sh
+  args: ["-c", "terraform -chdir=deployments/networking/dev apply -auto-approve"]
 - id: 'shared services deploy'
   name: 'hashicorp/terraform:1.0.0'
   entrypoint: sh
