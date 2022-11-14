@@ -2,7 +2,7 @@ module "vpc" {
   source  = "terraform-google-modules/network/google"
   version = "5.2.0"
   project_id = "${var.host_project}"
-  network_name = "${replace(basename(path.cwd), "_", "-")}-vpc"
+  network_name = "main-vpc"
   routing_mode = "GLOBAL"
   
   subnets = [
